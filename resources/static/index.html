@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Shimmer data stream</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<ul id="menuBar">
+    <li id="stepCount"><p id="stepsHeader">Current steps: </p><p id="steps">0</p></li>
+    <li class="li"><button id="openMenu" class="btn btn-info" onclick="openNav()"><span>Valikud</span></button></li>
+    <li class="li"><button id="restartSteps" class="btn btn-info" onclick="restartSteps()"><span>Nulli sammud</span></button></li>
+    <div id="myNav" class="overlay">
+        <div class="overlay-content">
+            <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+            <div>
+                <label class="containerLabel">Sisesta graafiku ajavahemik (s)</label>
+                <input id="time" type="number" value="40">
+            </div>
+            <div>
+                <label class="containerLabel">Sisesta anduri sagedus (Hz)</label>
+                <input id="freq" type="number" value="50.33">
+            </div>
+            <div>
+                <label class="containerLabel">Vali teljed mida kuvada</label>
+                <div>
+                    <label class="container">X-telg
+                        <input type="checkbox" class="axis" value="X" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Y-telg<input type="checkbox" class="axis" value="Y" checked="checked"><span class="checkmark"></span></label>
+                    <label class="container">Z-telg<input type="checkbox" class="axis" value="Z" checked="checked"><span class="checkmark"></span></label>
+                    <label class="container">Ruutkeskmine<input type="checkbox" class="axis" value="ruut"><span class="checkmark"></span></label>
+                </div>
+            </div>
+            <div id="buttonDiv">
+                <button id="close" type="button" class="btn btn-info" onclick="closeNav()">Sulge</button>
+                <button id="accept" type="button" class="btn btn-success" onclick="confirm()">Kinnita</button>
+            </div>
+        </div>
+    </div>
+
+
+</ul>
+<div id="chartContainer"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script type="text/javascript" src="js/canvasjs.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
